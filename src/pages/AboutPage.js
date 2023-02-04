@@ -6,10 +6,24 @@ import aboutImg from "../assets/hero-bcg.jpeg";
 const AboutPage = () => {
   return (
     <main>
-      <PageHero />
+      <PageHero title="about" />
       <Wrapper className="page section section-center">
         <img src={aboutImg} alt="nice desk" />
-        <article></article>
+        <article>
+          <div className="title">
+            <h2>our story</h2>
+            <div className="underline"></div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            eaque laudantium mollitia, repellat libero nesciunt iusto cumque.
+            Beatae reprehenderit sint aliquid tenetur minus laudantium, sequi
+            numquam quae nobis repellat natus. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Repudiandae quae earum id! Ea dolorem
+            officia accusamus libero iure suscipit, obcaecati tenetur veniam,
+            quas corporis labore cupiditate deserunt. Ut, iure in!
+          </p>
+        </article>
       </Wrapper>
     </main>
   );
