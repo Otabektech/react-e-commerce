@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 import AmountButtons from "./AmountButtons";
-
 const AddToCart = ({ product }) => {
+  // add to cart
   const { addToCart } = useCartContext();
   const { id, stock, colors } = product;
-
   const [mainColor, setMainColor] = useState(colors[0]);
-
   const [amount, setAmount] = useState(1);
 
   const increase = () => {
@@ -22,7 +20,6 @@ const AddToCart = ({ product }) => {
       return tempAmount;
     });
   };
-
   const decrease = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount - 1;
@@ -32,11 +29,10 @@ const AddToCart = ({ product }) => {
       return tempAmount;
     });
   };
-
   return (
     <Wrapper>
       <div className="colors">
-        <span> colors : </span>
+        <span>colors :</span>
         <div>
           {colors.map((color, index) => {
             return (
@@ -56,12 +52,13 @@ const AddToCart = ({ product }) => {
       </div>
       <div className="btn-container">
         <AmountButtons
-          amount={amount}
           increase={increase}
           decrease={decrease}
+          amount={amount}
         />
+
         <Link
-          to="cart"
+          to="/cart"
           className="btn"
           onClick={() => addToCart(id, mainColor, amount, product)}
         >
@@ -71,7 +68,6 @@ const AddToCart = ({ product }) => {
     </Wrapper>
   );
 };
-
 const Wrapper = styled.section`
   margin-top: 2rem;
   .colors {
@@ -111,7 +107,6 @@ const Wrapper = styled.section`
   .btn-container {
     margin-top: 2rem;
   }
-
   .btn {
     margin-top: 1rem;
     width: 140px;

@@ -18,7 +18,6 @@ const CartPage = () => {
       </Wrapper>
     );
   }
-
   return (
     <main>
       <PageHero title="cart" />

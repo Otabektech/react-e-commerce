@@ -11,7 +11,6 @@ import {
   CLEAR_FILTERS,
 } from "../actions";
 import { useProductsContext } from "./products_context";
-import { logDOM } from "@testing-library/react";
 
 const initialState = {
   filtered_products: [],
@@ -48,18 +47,15 @@ export const FilterProvider = ({ children }) => {
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW });
   };
-
   const setListView = () => {
     dispatch({ type: SET_LISTVIEW });
   };
-
   const updateSort = (e) => {
     // for demonstration
-    // const name = e.target.name;
+    // const name = e.target.name
     const value = e.target.value;
     dispatch({ type: UPDATE_SORT, payload: value });
   };
-
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -77,11 +73,9 @@ export const FilterProvider = ({ children }) => {
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
-
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
-
   return (
     <FilterContext.Provider
       value={{

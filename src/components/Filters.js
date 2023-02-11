@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../utils/helpers";
@@ -50,8 +50,8 @@ const Filters = () => {
                   <button
                     key={index}
                     onClick={updateFilters}
-                    name="category"
                     type="button"
+                    name="category"
                     className={`${
                       category === c.toLowerCase() ? "active" : null
                     }`}
@@ -82,7 +82,9 @@ const Filters = () => {
             </select>
           </div>
           {/* end of companies */}
-          {/* colors */}
+          {/* 
+          colors
+          */}
           <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
@@ -119,7 +121,7 @@ const Filters = () => {
               })}
             </div>
           </div>
-          {/* end of colors */}
+          {/* end of colors  */}
           {/* price */}
           <div className="form-control">
             <h5>price</h5>
@@ -127,16 +129,16 @@ const Filters = () => {
             <input
               type="range"
               name="price"
-              onChange={updateFilters}
               min={min_price}
               max={max_price}
+              onChange={updateFilters}
               value={price}
             />
           </div>
           {/* end of price */}
           {/* shipping */}
           <div className="form-control shipping">
-            <label htmlFor="shipping">free shipping</label>
+            <label htmlFor="shipping"> free shipping</label>
             <input
               type="checkbox"
               name="shipping"
@@ -145,7 +147,7 @@ const Filters = () => {
               checked={shipping}
             />
           </div>
-          {/* end of shipping */}
+          {/* end of  shipping */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
@@ -172,7 +174,6 @@ const Wrapper = styled.section`
   .search-input::placeholder {
     text-transform: capitalize;
   }
-
   button {
     display: block;
     margin: 0.25em 0;
@@ -239,7 +240,6 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     column-gap: 0.5rem;
     font-size: 1rem;
-    max-width: 200px;
   }
   .clear-btn {
     background: var(--clr-red-dark);
