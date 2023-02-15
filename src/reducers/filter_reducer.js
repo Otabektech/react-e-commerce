@@ -1,4 +1,4 @@
-import { BsCheckLg } from "react-icons/bs";
+// import { BsCheckLg } from "react-icons/bs";
 import {
   LOAD_PRODUCTS,
   SET_LISTVIEW,
